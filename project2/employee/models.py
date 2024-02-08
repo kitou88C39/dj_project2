@@ -1,3 +1,5 @@
 from django.db import models
 
-# Create your models here.
+class Deparment(models.Model):
+    name = models.CharField('部署名', max_lemgth=20)
+    created_at = models.DateTimeField('日付', default=timezone.now)
