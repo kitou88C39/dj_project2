@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
-class Deparment(models.Model):
+class Department(models.Model):
     name = models.CharField('部署名', max_length=20)
     created_at = models.DateTimeField('日付', default=timezone.now)
 
@@ -13,10 +13,10 @@ class Employee(models.Model):
     last_name = models.CharField('姓', max_length=20)
     email = models.EmailField('メールアドレス', blank=True)
     department = models.ForeignKey(
-        Department, verbose_name= '部署', on_delete=models.PRPJECT,
+        Department, verbose_name='部署', on_delete=models.PROJECT,
     )
 
     created_at = models.DateTimeField('日付', default=timezone.now)
 
     def __str__(self):
-        return '{0} {1} {2}'.format(self.last_name, self.first_name, self.deparment)
+        return '{0} {1} {2}'.format(self.last_name, self.first_name, self.department)
