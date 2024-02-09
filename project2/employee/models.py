@@ -8,3 +8,7 @@ class Deparment(models.Model):
         return self.name
     
 class Employee(models.Model):
+    first_name = models.CharField('名', max_lemgth=20)
+    last_name = models.CharField('姓', max_lemgth=20)
+    email = models.EmailField('メールアドレス', blank=True)
+    Deparment, verbose_name(= '部署', on_delete=models.PRPJECT,)
