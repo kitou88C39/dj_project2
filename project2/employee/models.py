@@ -24,6 +24,10 @@ class Employee(models.Model):
     department = models.ForeignKey(
         Department, verbose_name='部署', on_delete=models.PROJECT,
     )
+    club = models.ManyToManyField(
+        Club, verbose_name='部活',
+    )
+
 
     created_at = models.DateTimeField('日付', default=timezone.now)
 
