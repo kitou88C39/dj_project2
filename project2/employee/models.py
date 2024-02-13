@@ -28,8 +28,8 @@ class Employee(models.Model):
         Club, verbose_name='部活',
     )
 
-
     created_at = models.DateTimeField('日付', default=timezone.now)
+    address=models.CharField('住所',max_length=20, blank=True)
 
     def __str__(self):
         return '{0} {1} {2}'.format(self.last_name, self.first_name, self.department)
